@@ -1,39 +1,61 @@
-# EjercicioMVC_Java-Mullo
+# 📈 Sistema de Cálculo de Comisiones - Mini-Core Java
 
-![Java 21](https://img.shields.io/badge/Java-21-orange.svg)
-![Spring Boot 3](https://img.shields.io/badge/Spring_Boot-3.x-brightgreen.svg)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue.svg)
-![Render](https://img.shields.io/badge/Deployed_on-Render-purple.svg)
+**Desarrollado por:** Josué Mullo  
+**Materia:** Ingeniería de Software / Ingeniería Web  
+**Institución:** Universidad de las Américas (UDLA)  
 
-Desarrollado por **Josué Mullo**.
+---
 
-Sistema de Gestión de Ventas y Comisiones construido con arquitectura MVC usando Spring Boot, Thymeleaf y base de datos PostgreSQL alojada en Supabase. El sistema utiliza entidades con JPA e inyección de dependencias.
+## 🚀 Descripción del Proyecto
 
-## Requisitos Previos
-- JDK 21
-- Docker (Opcional, para ejecución en contenedor)
-- Conexión a Base de Datos Supabase (La BD se crea y actualiza de manera automática mediante `ddl-auto=update`).
+Este mini-core es una aplicación robusta desarrollada en Java con Spring Boot que implementa una arquitectura MVC para la gestión y cálculo de comisiones de ventas. El sistema procesa transacciones dentro de un rango de fechas y aplica reglas de negocio dinámicas basadas en el rendimiento de los vendedores.
 
-## Construcción y Ejecución
+**Características Principales:**
+- **Cálculo Dinámico:** Aplicación de porcentajes (6%, 12% y 15%) según el volumen total de ventas.
+- **Arquitectura Limpia:** Uso de patrones Service/ServiceImpl, DTOs para la transferencia de datos y Repositorios JPA.
+- **Frontend Integrado:** Interfaz interactiva desarrollada con Thymeleaf y Bootstrap 5.
+- **Persistencia Escalable:** Conexión a PostgreSQL mediante Supabase con gestión de pool de conexiones.
 
-Para compilar y empaquetar el proyecto (asegúrate de setear la variable de entorno `SUPABASE_DB_PASSWORD` ya sea global o antes del comando):
+---
+
+## 🔗 Despliegue en Vivo
+
+La aplicación se encuentra dockerizada y desplegada en la nube:
+
+👉 **Demo del Proyecto en Render:**  
+[https://ejerciciomvc-java-mullo.onrender.com](https://ejerciciomvc-java-mullo.onrender.com)
+
+---
+
+## 🛠️ Stack Tecnológico
+
+- **Backend:** Java 21, Spring Boot 3.x, Spring Data JPA, Lombok.
+- **Frontend:** Thymeleaf, HTML5, CSS3 (Bootstrap 5).
+- **Base de Datos:** PostgreSQL (Alojada en Supabase).
+- **DevOps:** Docker, Render (PaaS).
+
+---
+
+## 💻 Configuración Local
+
+**1. Clonar el repositorio:**
 ```bash
-mvn clean package -DskipTests
+git clone https://github.com/sekai882/EjercicioMVC_Java-Mullo.git
 ```
 
-Para correr el `.jar` directamente:
+**2. Configurar Base de Datos:**
+Ajustar las credenciales en `src/main/resources/application.properties` (o asegurar que exista la variable de entorno `SUPABASE_DB_PASSWORD`).
+
+**3. Compilar el proyecto:**
+```bash
+mvn clean package
+```
+
+**4. Ejecutar la aplicación:**
 ```bash
 java -jar target/minicore-0.0.1-SNAPSHOT.jar
 ```
 
-## Docker
+---
 
-Construir la imagen de Docker usando el `Dockerfile` multietapa optimizado:
-```bash
-docker build -t minicore-app .
-```
-
-Ejecutar el contenedor pasando la variable de entorno requerida por la base de datos:
-```bash
-docker run -p 8080:8080 -e SUPABASE_DB_PASSWORD=tu_password minicore-app
-```
+<p align="center">© 2026 - Josué Mullo - UDLA</p>
